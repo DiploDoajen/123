@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sr">
 <head>
 <meta charset="UTF-8">
@@ -97,8 +98,8 @@ section {
     color: #1f3a5f;
 }
 
-/* STIL ZA LOGO RUSKOG DOMA */
-.logo-ruski-dom {
+/* STIL ZA LOGO (ISTI ZA SVE KARTICE) */
+.logo-centar {
     display: block;
     max-width: 250px;
     height: auto;
@@ -203,6 +204,7 @@ izdavanje viza i konzularne usluge.
 odbr: `
 <div class="card">
 <h2>Aparat Izaslanika odbrane</h2>
+<img src="izaslanik_odbrane.png" alt="Izaslanik odbrane" class="logo-centar">
 <p><strong>Izaslanik odbrane:</strong> general-major Gennady Mozhaev</p>
 <p>
 Zvanično predstavništvo Ministarstva odbrane Ruske Federacije,
@@ -213,7 +215,7 @@ zaduženo za vojno-političku i vojno-tehničku saradnju.
 kul: `
 <div class="card">
 <h2>Ruski centar za nauku i kulturu u Beogradu (Ruski dom)</h2>
-<img src="Ruski dom12345.png" alt="Logo Ruski dom" class="logo-ruski-dom">
+<img src="Ruski dom12345.png" alt="Logo Ruski dom" class="logo-centar">
 <p><strong>Adresa:</strong> Kraljice Natalije 33, Beograd</p>
 <p><strong>Direktor:</strong> Jevgenij Baranov</p>
 <p>
@@ -239,4 +241,3 @@ function showSection(key) {
 
 </body>
 </html>
-
