@@ -96,6 +96,15 @@ section {
 .card h2 {
     color: #1f3a5f;
 }
+
+/* STIL ZA LOGO RUSKOG DOMA */
+.logo-ruski-dom {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 4px;
+}
 </style>
 </head>
 
@@ -184,7 +193,7 @@ konz: `
 <div class="card">
 <h2>Konzularno odeljenje</h2>
 <p><strong>Adresa:</strong> Deligradska 32, Beograd</p>
-<p><strong>Šef:</strong> savetnik Aleksandra Simonova</p>
+<p><strong>Šef:</strong> Savetnik Aleksandra Simonova</p>
 <p>
 Obavlja poslove zaštite prava i interesa državljana Ruske Federacije,
 izdavanje viza i konzularne usluge.
@@ -204,6 +213,7 @@ zaduženo za vojno-političku i vojno-tehničku saradnju.
 kul: `
 <div class="card">
 <h2>Ruski centar za nauku i kulturu u Beogradu (Ruski dom)</h2>
+<img src="Ruski dom12345.png" alt="Logo Ruski dom" class="logo-ruski-dom">
 <p><strong>Adresa:</strong> Kraljice Natalije 33, Beograd</p>
 <p><strong>Direktor:</strong> Jevgenij Baranov</p>
 <p>
