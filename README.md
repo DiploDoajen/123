@@ -193,7 +193,7 @@ konz: `
 odbr: `
 <div class="card">
 <h2>Aparat Izaslanika odbrane</h2>
-<img src="izaslanik_odbrane.png" alt="Izaslanik odbrane" class="logo-izaslanik">
+<img src="Ataše.jpg" alt="Izaslanik odbrane" style="width: 100px; height: 100px; display: block; margin: 15px auto; object-fit: contain;">
 <p><strong>Izaslanik odbrane:</strong> general-major Gennady Mozhaev</p>
 <p>Zadužen za vojno-političku i vojno-tehničku saradnju.</p>
 </div>`,
@@ -201,7 +201,7 @@ odbr: `
 kul: `
 <div class="card">
 <h2>Ruski centar za nauku i kulturu u Beogradu (Ruski dom)</h2>
-<img src="Ruski dom12345.png" alt="Logo Ruski dom" class="logo-centar">
+<img src="Ruski dom12345.png" alt="Logo Ruski dom" style="width: 100px; height: 100px; display: block; margin: 20px auto; object-fit: contain;">
 <p><strong>Adresa:</strong> Kraljice Natalije 33, Beograd</p>
 <p>Najstariji Ruski dom u sistemu Rossotrudničestva.</p>
 </div>`,
