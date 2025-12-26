@@ -194,7 +194,7 @@ konz: `
 <div class="card">
 <h2>Konzularno odeljenje</h2>
 <p><strong>Adresa:</strong> Deligradska 32, Beograd</p>
-<p><strong>Šef:</strong> Savetnik Aleksandra Simonova</p>
+<p><strong>Šef:</strong> savetnik Aleksandra Simonova</p>
 <p>
 Obavlja poslove zaštite prava i interesa državljana Ruske Federacije,
 izdavanje viza i konzularne usluge.
