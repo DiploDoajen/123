@@ -2,195 +2,231 @@
 <html lang="sr">
 <head>
 <meta charset="UTF-8">
-<title>Virtuelna ambasada RF u Republici Srbiji</title>
-.hero {
-    background-image: url("slike/ruska-zastava.png"); /* putanja do slike */
-    background-size: cover;            /* POPUNJAVA ceo prostor */
-    background-position: center center;/* centriranje */
-    background-repeat: no-repeat;
-
-    min-height: 280px;                 /* visina crvenog prostora */
-    padding: 60px 20px;
-
-    color: #ffffff;
-    text-align: center;
-
-    position: relative;
-}
+<title>Virtuelna ambasada Ruske Federacije u Republici Srbiji</title>
 
 <style>
 body {
+    font-family: "Segoe UI", Arial, sans-serif;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
     background: #f4f6f8;
+    color: #1a1a1a;
 }
 
-header {
-    height: 360px;
-    background: linear-gradient(
-        rgba(0,0,0,0.55),
-        rgba(0,0,0,0.55)
-    ),
-    url("data:image/svg+xml;utf8,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'>
-    <rect width='3' height='2' fill='%23fff'/>
-    <rect y='0.66' width='3' height='0.66' fill='%23003f87'/>
-    <rect y='1.32' width='3' height='0.66' fill='%23d52b1e'/>
-    </svg>");
+/* HEADER – RUSKA ZASTAVA PREKO CELE POVRŠINE */
+header.ruska-zastava {
+    height: 320px;
+    background-image: url('download (10).jfif');
     background-size: cover;
-    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header.ruska-zastava .overlay {
+    background: rgba(0,0,0,0.55);
+    padding: 30px 50px;
+    border-radius: 10px;
     text-align: center;
-    padding-top: 70px;
 }
 
-header h1 {
+header.ruska-zastava h1 {
+    margin: 0;
     font-size: 32px;
+    color: #ffffff;
 }
 
-header p {
+header.ruska-zastava p {
     margin-top: 15px;
+    font-size: 16px;
+    color: #ffffff;
 }
 
+/* LAYOUT */
 main {
     display: flex;
-    max-width: 1200px;
-    margin: 30px auto;
-    gap: 30px;
-    padding: 0 20px;
 }
 
+/* NAVIGACIJA */
 nav {
-    width: 280px;
-    background: white;
-    border-radius: 6px;
+    width: 300px;
+    background: #ffffff;
+    border-right: 1px solid #ddd;
     padding: 20px;
+    height: calc(100vh - 320px);
+    overflow-y: auto;
 }
 
 nav h3 {
-    color: #0b5ed7;
+    color: #1f3a5f;
 }
 
-nav button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 8px;
-    background: #0b5ed7;
-    color: white;
-    border: none;
+nav ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+nav li {
+    margin: 12px 0;
     cursor: pointer;
-    border-radius: 4px;
+    color: #1f3a5f;
+    font-weight: 500;
 }
 
-nav button:hover {
-    background: #084298;
+nav li:hover {
+    text-decoration: underline;
 }
 
+/* SADRŽAJ */
 section {
     flex: 1;
-    background: white;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.card {
+    background: #ffffff;
     padding: 25px;
+    margin-bottom: 20px;
     border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-.institution {
-    display: none;
-}
-
-.institution.active {
-    display: block;
-}
-
-.institution h2 {
-    color: #0b5ed7;
+.card h2 {
+    color: #1f3a5f;
 }
 </style>
-
-<script>
-function showSection(id) {
-    const sections = document.querySelectorAll('.institution');
-    sections.forEach(sec => sec.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-}
-</script>
-
 </head>
 
 <body>
 
-<header>
-    <h1>Virtuelna ambasada Ruske Federacije u Republici Srbiji</h1>
-    <p>Zvanična struktura i unutrašnja organizacija diplomatske misije</p>
+<header class="ruska-zastava">
+    <div class="overlay">
+        <h1>Virtuelna ambasada Ruske Federacije u Republici Srbiji</h1>
+        <p>Zvanična struktura i unutrašnja organizacija diplomatske misije</p>
+    </div>
 </header>
 
 <main>
 
 <nav>
-    <h3>Prostorije ambasade</h3>
-    <button onclick="showSection('ambasador')">Kabinet ambasadora</button>
-    <button onclick="showSection('politicko')">Političko odeljenje</button>
-    <button onclick="showSection('ekonomsko')">Ekonomsko odeljenje</button>
-    <button onclick="showSection('konzularno')">Konzularno odeljenje</button>
-    <button onclick="showSection('vojni')">Vojni ataše</button>
-    <button onclick="showSection('ruski-dom')">Ruski dom</button>
+<h3>Prostorije ambasade</h3>
+<ul>
+    <li onclick="showSection('amb')">Kabinet ambasadora</li>
+    <li onclick="showSection('dip')">Diplomatska kancelarija</li>
+    <li onclick="showSection('pol')">Političko odeljenje</li>
+    <li onclick="showSection('eko')">Trgovinsko predstavništvo</li>
+    <li onclick="showSection('konz')">Konzularno odeljenje</li>
+    <li onclick="showSection('odbr')">Izaslanik odbrane</li>
+    <li onclick="showSection('kul')">Ruski dom</li>
+    <li onclick="showSection('adm')">Administrativno-tehnička služba</li>
+</ul>
 </nav>
 
-<section>
-
-<div id="ambasador" class="institution active">
-    <h2>Kabinet ambasadora</h2>
-    <p><strong>Titula:</strong> Izvanredni i opunomoćeni ambasador Ruske Federacije</p>
-    <p>
-        Ambasador predstavlja Rusku Federaciju u Republici Srbiji,
-        rukovodi radom diplomatske misije i zastupa interese države
-        u skladu sa Bečkom konvencijom o diplomatskim odnosima.
-    </p>
+<section id="content">
+<div class="card">
+<h2>Dobrodošli</h2>
+<p>
+Ova virtuelna simulacija prikazuje unutrašnju organizaciju Ambasade Ruske Federacije
+u Republici Srbiji, sa tačnim institucionalnim opisima i hijerarhijom diplomatske misije.
+</p>
 </div>
-
-<div id="politicko" class="institution">
-    <h2>Političko odeljenje</h2>
-    <p>
-        Političko odeljenje prati unutrašnju i spoljnu politiku Republike Srbije,
-        izrađuje političke analize i izveštaje za Ministarstvo spoljnih poslova RF.
-    </p>
-</div>
-
-<div id="ekonomsko" class="institution">
-    <h2>Ekonomsko odeljenje</h2>
-    <p>
-        Odeljenje razvija trgovinsku, investicionu i energetsku saradnju
-        između Ruske Federacije i Republike Srbije.
-    </p>
-</div>
-
-<div id="konzularno" class="institution">
-    <h2>Konzularno odeljenje</h2>
-    <p>
-        Konzularno odeljenje pruža konzularnu zaštitu državljanima Ruske Federacije,
-        izdaje vize i vrši notarske poslove.
-    </p>
-</div>
-
-<div id="vojni" class="institution">
-    <h2>Vojni ataše</h2>
-    <p><strong>Institucija:</strong> Ministarstvo odbrane Ruske Federacije</p>
-    <p>
-        Vojni ataše prati vojno-političke prilike, razvija vojnu saradnju
-        i predstavlja Oružane snage Ruske Federacije.
-    </p>
-</div>
-
-<div id="ruski-dom" class="institution">
-    <h2>Ruski dom u Beogradu</h2>
-    <p><strong>Institucija:</strong> Rossotrudničestvo</p>
-    <p>
-        Ruski dom je kulturno-obrazovna institucija koja promoviše ruski jezik,
-        kulturu, nauku i humanitarnu saradnju.
-    </p>
-</div>
-
 </section>
 
 </main>
 
+<script>
+const sections = {
+
+amb: `
+<div class="card">
+<h2>Kabinet ambasadora</h2>
+<p><strong>Šef misije:</strong> Nj. E. gospodin Aleksandar Bocan-Harčenko,
+Izvanredni i Opunomoćeni Ambasador Ruske Federacije u Republici Srbiji.</p>
+<p>
+Ukazom Predsednika Ruske Federacije od 10. juna 2019. godine br. 256,
+imenovan je za Izvanrednog i Opunomoćenog Ambasadora Ruske Federacije u Republici Srbiji.
+</p>
+</div>`,
+
+dip: `
+<div class="card">
+<h2>Diplomatska kancelarija</h2>
+<p>
+Diplomatska kancelarija pomaže ambasadoru u obavljanju političkih,
+protokolarnih i analitičkih zadataka, priprema izveštaje i održava
+kontakte sa državnim institucijama Republike Srbije.
+</p>
+</div>`,
+
+pol: `
+<div class="card">
+<h2>Političko odeljenje</h2>
+<p>
+Političko odeljenje prati unutrašnju i spoljnu politiku Republike Srbije,
+izrađuje analitičke izveštaje i učestvuje u pripremi političkih konsultacija.
+</p>
+</div>`,
+
+eko: `
+<div class="card">
+<h2>Trgovinsko predstavništvo Ruske Federacije</h2>
+<p><strong>Adresa:</strong> Katićeva 8–10, Beograd</p>
+<p><strong>Trgovinski predstavnik:</strong> gđa Irina Negrbetskaia</p>
+<p>
+Predstavlja trgovinsko-ekonomske interese Ruske Federacije
+i podržava bilateralnu privrednu saradnju.
+</p>
+</div>`,
+
+konz: `
+<div class="card">
+<h2>Konzularno odeljenje</h2>
+<p><strong>Adresa:</strong> Deligradska 32, Beograd</p>
+<p><strong>Šef:</strong> Savetnik Aleksandra Simonova</p>
+<p>
+Obavlja poslove zaštite prava i interesa državljana Ruske Federacije,
+izdavanje viza i konzularne usluge.
+</p>
+</div>`,
+
+odbr: `
+<div class="card">
+<h2>Aparat Izaslanika odbrane</h2>
+<p><strong>Izaslanik odbrane:</strong> general-major Gennady Mozhaev</p>
+<p>
+Zvanično predstavništvo Ministarstva odbrane Ruske Federacije,
+zaduženo za vojno-političku i vojno-tehničku saradnju.
+</p>
+</div>`,
+
+kul: `
+<div class="card">
+<h2>Ruski centar za nauku i kulturu u Beogradu (Ruski dom)</h2>
+<p><strong>Adresa:</strong> Kraljice Natalije 33, Beograd</p>
+<p><strong>Direktor:</strong> Jevgenij Baranov</p>
+<p>
+Najstariji Ruski dom u sistemu Rossotrudničestva,
+osnovan 1933. godine.
+</p>
+</div>`,
+
+adm: `
+<div class="card">
+<h2>Administrativno-tehnička služba</h2>
+<p>
+Obezbeđuje logističku, tehničku i administrativnu podršku
+radu Ambasade Ruske Federacije.
+</p>
+</div>`
+};
+
+function showSection(key) {
+    document.getElementById("content").innerHTML = sections[key];
+}
+</script>
+
 </body>
 </html>
+
