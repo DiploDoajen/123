@@ -67,8 +67,8 @@ section { flex: 1; padding: 30px; overflow-y: auto; }
 /* 1. Ruski dom - Veća slika */
 .img-ruski-dom {
     display: block;
-    width: 250px;   /* Širina */
-    height: 180px;  /* Visina */
+    width: 100px;   /* Širina */
+    height: 100px;  /* Visina */
     margin: 20px auto;
     object-fit: contain; /* Čuva proporcije bez razvlačenja */
 }
