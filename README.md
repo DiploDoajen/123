@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="sr">
 <head>
 <meta charset="UTF-8">
@@ -19,7 +20,7 @@
         overflow-x: hidden;
     }
 
-    /* 1. EKSPERTSKI LOADER (PRECIZNA ESTETIKA) */
+    /* 1. EKSPERTSKI LOADER */
     #loader-wrapper {
         position: fixed;
         top: 0; left: 0; width: 100%; height: 100%;
@@ -66,11 +67,11 @@
         100% { width: 100%; }
     }
 
-    /* 2. SPLASH SCREEN (KREMLJ) */
+    /* 2. SPLASH SCREEN (KREMLJ) - Korišćenje tvoje slike */
     #kremlj-screen {
         position: fixed;
         top: 0; left: 0; width: 100%; height: 100%;
-        background: #000 url('kremlj.png') no-repeat center center;
+        background: #000 url('Силуэты Кремля_  Сергей Семёнов_.jfif') no-repeat center center;
         background-size: cover;
         z-index: 9998;
         display: none;
@@ -96,7 +97,7 @@
         font-weight: 400;
         text-transform: uppercase;
         letter-spacing: 6px;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        text-shadow: 0 2px 10px rgba(0,0,0,0.8);
         animation: fadeInText 2s ease-in-out infinite alternate;
     }
 
@@ -157,6 +158,8 @@
 
     section { flex: 1; padding: 3rem; }
     .card { background: #fff; padding: 3rem; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    
+    hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
 </style>
 </head>
 
@@ -197,6 +200,7 @@
             <section id="content">
                 <div class="card">
                     <h2 style="font-weight: 300;">Dobrodošli</h2>
+                    <hr>
                     <p style="line-height: 1.6; color: #555;">Sistem je spreman. Odaberite željeni sektor iz navigacionog panela.</p>
                 </div>
             </section>
@@ -204,19 +208,17 @@
     </div>
 
 <script>
-    // EKSPERTSKO UPRAVLJANJE UČITAVANJEM
     window.addEventListener('load', function() {
         const loader = document.getElementById('loader-wrapper');
         const splash = document.getElementById('kremlj-screen');
 
-        // Brza inicijalizacija nakon učitavanja svih resursa
         setTimeout(() => {
             loader.style.opacity = '0';
             setTimeout(() => {
                 loader.style.display = 'none';
                 splash.classList.add('visible');
             }, 600);
-        }, 1200); // 1.2s je idealno vreme za vizuelnu progresiju bara
+        }, 1200);
     });
 
     function enterSite() {
@@ -234,14 +236,14 @@
     }
 
     const sections = {
-        amb: `<div class="card"><h2>Kabinet ambasadora</h2><p>Pristup poverljivim podacima i zvanični raspored šefa misije.</p></div>`,
-        dip: `<div class="card"><h2>Diplomatska kancelarija</h2><p>Koordinacija diplomatskih nota i protokola.</p></div>`,
-        pol: `<div class="card"><h2>Političko odeljenje</h2><p>Analitički izveštaji i bilateralna saradnja.</p></div>`,
-        eko: `<div class="card"><h2>Trgovinsko predstavništvo</h2><p>Ekonomski odnosi i podrška privrednicima.</p></div>`,
-        konz: `<div class="card"><h2>Konzularno odeljenje</h2><p>Usluge državljanima i vizni režim.</p></div>`,
-        odbr: `<div class="card"><h2>Izaslanik odbrane</h2><p>Vojno-diplomatski sektor.</p></div>`,
-        kul: `<div class="card"><h2>Ruski dom</h2><p>Kulturna razmena i edukacija.</p></div>`,
-        adm: `<div class="card"><h2>Administracija</h2><p>Tehničko upravljanje i logistika.</p></div>`
+        amb: `<div class="card"><h2>Kabinet ambasadora</h2><hr><p><strong>Ambasador:</strong> Nj. E. Aleksandar Bocan-Harčenko.</p><p>Pristup poverljivim podacima i zvanični raspored šefa misije.</p></div>`,
+        dip: `<div class="card"><h2>Diplomatska kancelarija</h2><hr><p>Protokol i korespodencija misije. Koordinacija diplomatskih nota.</p></div>`,
+        pol: `<div class="card"><h2>Političko odeljenje</h2><hr><p>Analiza i saradnja na međudržavnom nivou. Analitički izveštaji i bilateralna saradnja.</p></div>`,
+        eko: `<div class="card"><h2>Trgovinsko predstavništvo</h2><hr><p>Katićeva 8–10, Beograd. Ekonomski odnosi i podrška privrednicima.</p></div>`,
+        konz: `<div class="card"><h2>Konzularno odeljenje</h2><hr><p>Deligradska 32, Beograd. Usluge državljanima i vizni režim.</p></div>`,
+        odbr: `<div class="card"><h2>Izaslanik odbrane</h2><hr><p>Vojno-tehnička saradnja. Vojno-diplomatski sektor.</p></div>`,
+        kul: `<div class="card"><h2>Ruski dom</h2><hr><p>Kraljice Natalije 33, Beograd. Kulturna razmena i edukacija.</p></div>`,
+        adm: `<div class="card"><h2>Administracija</h2><hr><p>Administrativno-tehnička služba. Tehničko upravljanje i logistika.</p></div>`
     };
 
     function showSection(key) {
