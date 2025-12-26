@@ -3,6 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Virtuelna ambasada RF u Republici Srbiji</title>
+.hero {
+    background-image: url("slike/ruska-zastava.png"); /* putanja do slike */
+    background-size: cover;            /* POPUNJAVA ceo prostor */
+    background-position: center center;/* centriranje */
+    background-repeat: no-repeat;
+
+    min-height: 280px;                 /* visina crvenog prostora */
+    padding: 60px 20px;
+
+    color: #ffffff;
+    text-align: center;
+
+    position: relative;
+}
 
 <style>
 body {
