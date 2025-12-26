@@ -48,7 +48,7 @@ main {
     display: flex;
 }
 
-/* NAVIGACIJA */
+/* NAVIGACIJA SA DUGMADIMA */
 nav {
     width: 300px;
     background: #ffffff;
@@ -60,22 +60,46 @@ nav {
 
 nav h3 {
     color: #1f3a5f;
+    margin-bottom: 20px;
 }
 
 nav ul {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
+    margin: 0;
 }
 
 nav li {
-    margin: 12px 0;
-    cursor: pointer;
-    color: #1f3a5f;
-    font-weight: 500;
+    margin-bottom: 10px;
 }
 
-nav li:hover {
-    text-decoration: underline;
+/* STIL ZA PRAVA DUGMAD */
+.nav-button {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #f8f9fa;
+    color: #1f3a5f;
+    border: 1px solid #d1d8e0;
+    border-radius: 6px;
+    text-align: left;
+    font-weight: 600;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #1f3a5f;
+    color: #ffffff;
+    border-color: #1f3a5f;
+    transform: translateX(5px);
+}
+
+.nav-button:active {
+    background-color: #162a45;
+    transform: scale(0.98);
 }
 
 /* SADRŽAJ */
@@ -96,24 +120,6 @@ section {
 .card h2 {
     color: #1f3a5f;
 }
-
-/* STIL ZA LOGO RUSKOG DOMA */
-.logo-centar {
-    display: block;
-    max-width: 250px;
-    height: auto;
-    margin: 20px auto;
-    border-radius: 4px;
-}
-
-/* NOVI STIL ZA MANJU SLIKU IZASLANIKA */
-.logo-izaslanik {
-    display: block;
-    max-width: 120px; /* Smanjena veličina */
-    height: auto;
-    margin: 15px auto;
-    border-radius: 4px;
-}
 </style>
 </head>
 
@@ -131,14 +137,14 @@ section {
 <nav>
 <h3>Prostorije ambasade</h3>
 <ul>
-    <li onclick="showSection('amb')">Kabinet ambasadora</li>
-    <li onclick="showSection('dip')">Diplomatska kancelarija</li>
-    <li onclick="showSection('pol')">Političko odeljenje</li>
-    <li onclick="showSection('eko')">Trgovinsko predstavništvo</li>
-    <li onclick="showSection('konz')">Konzularno odeljenje</li>
-    <li onclick="showSection('odbr')">Izaslanik odbrane</li>
-    <li onclick="showSection('kul')">Ruski dom</li>
-    <li onclick="showSection('adm')">Administrativno-tehnička služba</li>
+    <li><button class="nav-button" onclick="showSection('amb')">Kabinet ambasadora</button></li>
+    <li><button class="nav-button" onclick="showSection('dip')">Diplomatska kancelarija</button></li>
+    <li><button class="nav-button" onclick="showSection('pol')">Političko odeljenje</button></li>
+    <li><button class="nav-button" onclick="showSection('eko')">Trgovinsko predstavništvo</button></li>
+    <li><button class="nav-button" onclick="showSection('konz')">Konzularno odeljenje</button></li>
+    <li><button class="nav-button" onclick="showSection('odbr')">Izaslanik odbrane</button></li>
+    <li><button class="nav-button" onclick="showSection('kul')">Ruski dom</button></li>
+    <li><button class="nav-button" onclick="showSection('adm')">Administrativno-tehnička služba</button></li>
 </ul>
 </nav>
 
@@ -147,7 +153,7 @@ section {
 <h2>Dobrodošli</h2>
 <p>
 Ova virtuelna simulacija prikazuje unutrašnju organizaciju Ambasade Ruske Federacije
-u Republici Srbiji, sa tačnim institucionalnim opisima i hijerarhijom diplomatske misije.
+u Republici Srbiji. Izaberite odeljenje iz menija sa leve strane.
 </p>
 </div>
 </section>
@@ -193,7 +199,7 @@ konz: `
 odbr: `
 <div class="card">
 <h2>Aparat Izaslanika odbrane</h2>
-<img src="izaslanik_odbrane.png" alt="Izaslanik odbrane" style="width: 180px; height: 160px; display: block; margin: 15px auto; object-fit: contain;">
+<img src="izaslanik_odbrane.png" alt="Izaslanik odbrane" style="width: 80px; height: 100px; display: block; margin: 15px auto; object-fit: contain;">
 <p><strong>Izaslanik odbrane:</strong> general-major Gennady Mozhaev</p>
 <p>Zadužen za vojno-političku i vojno-tehničku saradnju.</p>
 </div>`,
@@ -201,7 +207,7 @@ odbr: `
 kul: `
 <div class="card">
 <h2>Ruski centar za nauku i kulturu u Beogradu (Ruski dom)</h2>
-<img src="Ruski dom12345.png" alt="Logo Ruski dom" style="width: 180px; height: 160px; display: block; margin: 20px auto; object-fit: contain;">
+<img src="Ruski dom12345.png" alt="Logo Ruski dom" style="width: 250px; height: 180px; display: block; margin: 20px auto; object-fit: contain;">
 <p><strong>Adresa:</strong> Kraljice Natalije 33, Beograd</p>
 <p>Najstariji Ruski dom u sistemu Rossotrudničestva.</p>
 </div>`,
