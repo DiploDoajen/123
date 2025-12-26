@@ -41,7 +41,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('kremlj.jfif'); /* Ovde ide tvoja slika */
+    background-image: url('kremlj.png'); /* Ovde ide tvoja slika */
     background-size: cover;
     background-position: center;
     z-index: 9998;
