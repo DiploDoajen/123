@@ -71,7 +71,7 @@
     #kremlj-screen {
         position: fixed;
         top: 0; left: 0; width: 100%; height: 100%;
-        background: #000 url('Силуэты Кремля_  Сергей Семёнов_.jfif') no-repeat center center;
+        background: #000 url('kremlj.png') no-repeat center center;
         background-size: cover;
         z-index: 9998;
         display: none;
