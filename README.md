@@ -5,7 +5,15 @@
 <title>Virtuelna ambasada Ruske Federacije u Republici Srbiji</title>
 
 <style>
-/* STIL ZA LOADING SCREEN */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f8;
+    color: #1a1a1a;
+    overflow-x: hidden;
+}
+
+/* 1. LOADING SCREEN */
 #loader-wrapper {
     position: fixed;
     top: 0;
@@ -17,7 +25,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 10000;
 }
 
 .spinner {
@@ -34,46 +42,42 @@
     100% { transform: rotate(360deg); }
 }
 
-/* STIL ZA KREMLJ EKRAN (PREKO CELOG EKRANA) */
+/* 2. KREMLJ EKRAN (SPLASH SCREEN) */
 #kremlj-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('kremlj.png'); /* Ovde ide tvoja slika */
+    background: black url('kremlj.png') no-repeat center center;
     background-size: cover;
-    background-position: center;
     z-index: 9998;
-    display: none; /* Inicijalno sakriveno dok se učitava */
+    display: none; /* Prikazuje se nakon loadera */
     cursor: pointer;
 }
 
 #kremlj-screen .enter-text {
     position: absolute;
-    bottom: 10%;
+    bottom: 12%;
     width: 100%;
     text-align: center;
     color: white;
-    font-size: 24px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+    font-size: 26px;
+    text-shadow: 2px 2px 15px rgba(0,0,0,1);
     font-weight: bold;
+    letter-spacing: 2px;
     animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
+    0% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0.4; transform: scale(1); }
 }
 
-/* OSNOVNI STILOVI SAJTA */
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    margin: 0;
-    background: #f4f6f8;
-    color: #1a1a1a;
-    display: none; /* Sakrivamo glavni sadržaj dok se ne klikne na sliku */
+/* 3. GLAVNI SADRŽAJ */
+#main-content {
+    display: none; 
 }
 
 header.ruska-zastava {
@@ -87,24 +91,21 @@ header.ruska-zastava {
 }
 
 header.ruska-zastava .overlay {
-    background: rgba(0,0,0,0.55);
+    background: rgba(0,0,0,0.6);
     padding: 30px 50px;
     border-radius: 10px;
     text-align: center;
 }
 
 header.ruska-zastava h1 { margin: 0; font-size: 32px; color: #ffffff; }
-header.ruska-zastava p { margin-top: 15px; font-size: 16px; color: #ffffff; }
 
-main { display: flex; }
+main { display: flex; min-height: calc(100vh - 320px); }
 
 nav {
     width: 300px;
     background: #ffffff;
     border-right: 1px solid #ddd;
     padding: 20px;
-    height: calc(100vh - 320px);
-    overflow-y: auto;
 }
 
 .nav-button {
@@ -119,17 +120,17 @@ nav {
     font-weight: 600;
     cursor: pointer;
     margin-bottom: 10px;
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .nav-button:hover {
     background-color: #1f3a5f;
     color: #ffffff;
-    transform: translateX(5px);
+    padding-left: 20px;
 }
 
-section { flex: 1; padding: 30px; }
-.card { background: #ffffff; padding: 25px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+section { flex: 1; padding: 40px; }
+.card { background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 </style>
 </head>
 
@@ -137,25 +138,25 @@ section { flex: 1; padding: 30px; }
 
 <div id="loader-wrapper">
     <div class="spinner"></div>
-    <p style="margin-top: 20px; color: #1f3a5f; font-weight: bold;">Učitavanje...</p>
+    <p style="margin-top: 20px; color: #1f3a5f; font-weight: bold; letter-spacing: 1px;">SISTEM SE UČITAVA...</p>
 </div>
 
 <div id="kremlj-screen" onclick="enterSite()">
-    <div class="enter-text">KLIKNITE ZA ULAZAK</div>
+    <div class="enter-text">KLIKNITE ZA ULAZAK U AMBASADU</div>
 </div>
 
 <div id="main-content">
     <header class="ruska-zastava">
         <div class="overlay">
             <h1>Virtuelna ambasada Ruske Federacije u Republici Srbiji</h1>
-            <p>Zvanična struktura i unutrašnja organizacija diplomatske misije</p>
+            <p style="color:white; margin-top:10px; font-style: italic;">Zvanična digitalna struktura diplomatske misije</p>
         </div>
     </header>
 
     <main>
         <nav>
-            <h3>Prostorije ambasade</h3>
-            <ul>
+            <h3 style="color: #1f3a5f;">Prostorije</h3>
+            <ul style="list-style: none; padding: 0;">
                 <li><button class="nav-button" onclick="showSection('amb')">Kabinet ambasadora</button></li>
                 <li><button class="nav-button" onclick="showSection('dip')">Diplomatska kancelarija</button></li>
                 <li><button class="nav-button" onclick="showSection('pol')">Političko odeljenje</button></li>
@@ -170,44 +171,33 @@ section { flex: 1; padding: 30px; }
         <section id="content">
             <div class="card">
                 <h2>Dobrodošli</h2>
-                <p>Ova virtuelna simulacija prikazuje unutrašnju organizaciju Ambasade Ruske Federacije u Republici Srbiji.</p>
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+                <p>Uspešno ste pristupili informacionom sistemu Ambasade Ruske Federacije. Koristite meni sa leve strane za navigaciju kroz odeljenja.</p>
             </div>
         </section>
     </main>
 </div>
 
 <script>
-// Funkcija koja se pokreće čim se stranica učita
+// Logika za Loader i Splash Screen
 window.onload = function() {
     setTimeout(function() {
         // Sakrij loader
         document.getElementById('loader-wrapper').style.display = 'none';
-        // Prikaži Kremlj sliku
+        // Prikaži sliku Kremlja (kremlj.png)
         document.getElementById('kremlj-screen').style.display = 'block';
-    }, 1500); // 1.5 sekundi
+    }, 1500); // Traje 1.5 sekundi
 };
 
-// Funkcija za ulazak na sajt nakon klika na sliku
+// Funkcija za ulazak na glavni deo sajta
 function enterSite() {
     document.getElementById('kremlj-screen').style.display = 'none';
-    document.body.style.display = 'block';
+    document.getElementById('main-content').style.display = 'block';
 }
 
+// Sadržaj sekcija
 const sections = {
-    amb: `<div class="card"><h2>Kabinet ambasadora</h2><p>Šef misije: Nj. E. Aleksandar Bocan-Harčenko.</p></div>`,
-    dip: `<div class="card"><h2>Diplomatska kancelarija</h2><p>Pomaže ambasadoru u obavljanju zadataka.</p></div>`,
-    pol: `<div class="card"><h2>Političko odeljenje</h2><p>Prati politiku Republike Srbije.</p></div>`,
-    eko: `<div class="card"><h2>Trgovinsko predstavništvo</h2><p>Katićeva 8–10, Beograd.</p></div>`,
-    konz: `<div class="card"><h2>Konzularno odeljenje</h2><p>Deligradska 32, Beograd.</p></div>`,
-    odbr: `<div class="card"><h2>Izaslanik odbrane</h2><p>General-major Gennady Mozhaev.</p></div>`,
-    kul: `<div class="card"><h2>Ruski dom</h2><p>Kraljice Natalije 33, Beograd.</p></div>`,
-    adm: `<div class="card"><h2>Administrativno-tehnička služba</h2><p>Logistička podrška.</p></div>`
-};
-
-function showSection(key) {
-    document.getElementById("content").innerHTML = sections[key];
-}
-</script>
-
-</body>
-</html>
+    amb: `<div class="card"><h2>Kabinet ambasadora</h2><p><strong>Ambasador:</strong> Nj. E. Aleksandar Bocan-Harčenko.</p></div>`,
+    dip: `<div class="card"><h2>Diplomatska kancelarija</h2><p>Protokol i korespodencija misije.</p></div>`,
+    pol: `<div class="card"><h2>Političko odeljenje</h2><p>Analiza i saradnja na međudržavnom nivou.</p></div>`,
+    eko: `<div class="card"><h2>Trgovinsko predstavništvo</h2><p>Katićeva 8–10
