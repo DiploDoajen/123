@@ -199,7 +199,7 @@ konz: `
 odbr: `
 <div class="card">
 <h2>Aparat Izaslanika odbrane</h2>
-<img src="izaslanik_odbrane.png" alt="Izaslanik odbrane" style="width: 80px; height: 100px; display: block; margin: 15px auto; object-fit: contain;">
+<img src="izaslanik_odbrane.png" alt="Izaslanik odbrane" style="width: 250px; height: 180px; display: block; margin: 15px auto; object-fit: contain;">
 <p><strong>Izaslanik odbrane:</strong> general-major Gennady Mozhaev</p>
 <p>Zadužen za vojno-političku i vojno-tehničku saradnju.</p>
 </div>`,
