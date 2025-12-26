@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="sr">
 <head>
 <meta charset="UTF-8">
@@ -98,12 +97,21 @@ section {
     color: #1f3a5f;
 }
 
-/* STIL ZA LOGO (ISTI ZA SVE KARTICE) */
+/* STIL ZA LOGO RUSKOG DOMA */
 .logo-centar {
     display: block;
     max-width: 250px;
     height: auto;
     margin: 20px auto;
+    border-radius: 4px;
+}
+
+/* NOVI STIL ZA MANJU SLIKU IZASLANIKA */
+.logo-izaslanik {
+    display: block;
+    max-width: 120px; /* Smanjena veličina */
+    height: auto;
+    margin: 15px auto;
     border-radius: 4px;
 }
 </style>
@@ -154,62 +162,40 @@ amb: `
 <h2>Kabinet ambasadora</h2>
 <p><strong>Šef misije:</strong> Nj. E. gospodin Aleksandar Bocan-Harčenko,
 Izvanredni i Opunomoćeni Ambasador Ruske Federacije u Republici Srbiji.</p>
-<p>
-Ukazom Predsednika Ruske Federacije od 10. juna 2019. godine br. 256,
-imenovan je za Izvanrednog i Opunomoćenog Ambasadora Ruske Federacije u Republici Srbiji.
-</p>
 </div>`,
 
 dip: `
 <div class="card">
 <h2>Diplomatska kancelarija</h2>
-<p>
-Diplomatska kancelarija pomaže ambasadoru u obavljanju političkih,
-protokolarnih i analitičkih zadataka, priprema izveštaje i održava
-kontakte sa državnim institucijama Republike Srbije.
-</p>
+<p>Diplomatska kancelarija pomaže ambasadoru u obavljanju diplomatskih zadataka.</p>
 </div>`,
 
 pol: `
 <div class="card">
 <h2>Političko odeljenje</h2>
-<p>
-Političko odeljenje prati unutrašnju i spoljnu politiku Republike Srbije,
-izrađuje analitičke izveštaje i učestvuje u pripremi političkih konsultacija.
-</p>
+<p>Prati unutrašnju i spoljnu politiku Republike Srbije.</p>
 </div>`,
 
 eko: `
 <div class="card">
 <h2>Trgovinsko predstavništvo Ruske Federacije</h2>
 <p><strong>Adresa:</strong> Katićeva 8–10, Beograd</p>
-<p><strong>Trgovinski predstavnik:</strong> gđa Irina Negrbetskaia</p>
-<p>
-Predstavlja trgovinsko-ekonomske interese Ruske Federacije
-i podržava bilateralnu privrednu saradnju.
-</p>
+<p>Podržava bilateralnu privrednu saradnju.</p>
 </div>`,
 
 konz: `
 <div class="card">
 <h2>Konzularno odeljenje</h2>
 <p><strong>Adresa:</strong> Deligradska 32, Beograd</p>
-<p><strong>Šef:</strong> savetnik Aleksandra Simonova</p>
-<p>
-Obavlja poslove zaštite prava i interesa državljana Ruske Federacije,
-izdavanje viza i konzularne usluge.
-</p>
+<p>Pruža vize i konzularne usluge državljanima.</p>
 </div>`,
 
 odbr: `
 <div class="card">
 <h2>Aparat Izaslanika odbrane</h2>
-<img src="izaslanik_odbrane.png" alt="Izaslanik odbrane" class="logo-centar">
+<img src="izaslanik_odbrane.png" alt="Izaslanik odbrane" class="logo-izaslanik">
 <p><strong>Izaslanik odbrane:</strong> general-major Gennady Mozhaev</p>
-<p>
-Zvanično predstavništvo Ministarstva odbrane Ruske Federacije,
-zaduženo za vojno-političku i vojno-tehničku saradnju.
-</p>
+<p>Zadužen za vojno-političku i vojno-tehničku saradnju.</p>
 </div>`,
 
 kul: `
@@ -217,20 +203,13 @@ kul: `
 <h2>Ruski centar za nauku i kulturu u Beogradu (Ruski dom)</h2>
 <img src="Ruski dom12345.png" alt="Logo Ruski dom" class="logo-centar">
 <p><strong>Adresa:</strong> Kraljice Natalije 33, Beograd</p>
-<p><strong>Direktor:</strong> Jevgenij Baranov</p>
-<p>
-Najstariji Ruski dom u sistemu Rossotrudničestva,
-osnovan 1933. godine.
-</p>
+<p>Najstariji Ruski dom u sistemu Rossotrudničestva.</p>
 </div>`,
 
 adm: `
 <div class="card">
 <h2>Administrativno-tehnička služba</h2>
-<p>
-Obezbeđuje logističku, tehničku i administrativnu podršku
-radu Ambasade Ruske Federacije.
-</p>
+<p>Obezbeđuje logističku i tehničku podršku radu Ambasade.</p>
 </div>`
 };
 
